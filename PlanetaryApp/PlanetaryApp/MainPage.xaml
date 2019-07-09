@@ -5,10 +5,16 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d">
-    <ListView x:Name="planetsListView" RowHeight="80" HasUnevenRows="true">
+    <ListView x:Name="planetsListView"
+              HasUnevenRows="true"
+              RowHeight="80">
         <ListView.ItemTemplate>
-            <TextCell Text="{Binding Name}" TextColor="Black"
-                      Detail="{Binding Distance}" DetailColor="Red" />
+            <DataTemplate>
+                <TextCell Detail="{Binding Distance}"
+                          DetailColor="Red"
+                          Text="{Binding Name}"
+                          TextColor="Black" />
+            </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>
 </ContentPage>
